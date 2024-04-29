@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Forum Detail</title>
+        <h1 style="color:#485935">Forum Thread</h1>
+    </head>
+    <body>
+        <div style="max-width:800px; text-align:justified">
+        <h2 style="color:#8A9A5B">{{ post.title }}</h2>
+        <p>
+            Post Category: {{ post.category.name }} <br/>
+            Category Description: {{ post.category.description }}
+        </p>
+        <p>
+            Created on: {{ post.created_on }} <br/>
+            Updated on: {{ post.updated_on }}
+        </p>
+        <p>
+            <h3 style="color:#8A9A5B">Post Entry</h3>
+            {{ post.entry }}
+        </p>
+        <a href="{{ post.get_root_url }}" style="color:#485935">Threads List</a>
+        </div>
+    </body>
+</html>

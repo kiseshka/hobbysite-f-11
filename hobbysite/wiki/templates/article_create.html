@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Article</title>
+</head>
+<body>
+    <h1>Create Article</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="title">Title:</label><br>
+        <input type="text" id="title" name="title" required><br><br>
+        
+        <label for="category">Category:</label><br>
+        <select id="category" name="category" required>
+            {% for category in categories %}
+            <option value="{{ category.id }}">{{ category.name }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <label for="entry">Entry:</label><br>
+        <textarea id="entry" name="entry" required></textarea><br><br>
+        
+        <label for="header_image">Header Image:</label><br>
+        <input type="file" id="header_image" name="header_image" accept="image/*" required><br><br>
+        
+        <input type="submit" value="Create">
+    </form>
+</body>
+</html>
